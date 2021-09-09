@@ -37,7 +37,27 @@ function it(description, contents){
   //
   // ONLY ADD CODE TO THIS SECTION
   
-  
+    function Human({name, cool = false} = {}){
+        this.name = name,
+        this.cool = cool
+    }
+
+    function Dog({color, owner, hungry = true, status = 'normal'} = {}){
+        this.color = color,
+        this.owner = owner,
+        this.hungry = hungry,
+        this.status = status
+    }
+
+    Human.prototype.pet = function(pet) {
+        pet.status = 'happy';
+    }
+
+    Human.prototype.feed = function(pet) {
+        pet.hungry = false;
+    }
+
+    Human.prototype.cool = false;
   
   //     __
   //    / /_  __  ______ ___  ____ _____  _____
@@ -112,3 +132,4 @@ function it(description, contents){
     expect(faith.cool).toBe(true);
     expect(mady.cool).toBe(false);
   });
+
